@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background-color: #cecece;
+}
+
+.main-container {
+  @apply max-w-[1536px] mx-auto max-[1536px]:px-4;
+}
