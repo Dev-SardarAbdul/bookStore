@@ -16,7 +16,7 @@ const getSingleBook = async (req, res) => {
     const book = await Book.findById(id);
 
     if (!book) {
-      res.status(200).json({ message: "Book Not Found!" });
+      res.status(404).json({ message: "Book Not Found!" });
     }
     res.status(200).json(book);
   } catch (error) {
@@ -25,7 +25,7 @@ const getSingleBook = async (req, res) => {
 };
 
 const createBook = async (req, res) => {
-  const { title, author, summary, publishYear } = req.body;
+  const { title, author, publishYear, summary } = req.body;
 
   if (!title || !author || !summary || !publishYear) {
     return res.status(501).json({ error: "All fields must be filled!" });
